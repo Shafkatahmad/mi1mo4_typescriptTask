@@ -99,3 +99,23 @@ class Student extends Person {
 const student = new Student("Alice", 20, "A");
 student.getDetails();
 // console.log(student.getDetails());
+
+// return intersection function
+const getIntersection = (firstArray: number[], secondArray: number[]) => {
+  let intersectionArray: number[] = [];
+
+  for (let i = 0; i < firstArray.length; i++) {
+    const value = firstArray[i];
+    if (value === undefined) continue;
+
+    for (let j = 0; j < secondArray.length; j++) {
+      if (value === secondArray[j]) {
+        intersectionArray.push(value);
+        break;
+      }
+    }
+  }
+  return intersectionArray;
+};
+
+console.log(getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));

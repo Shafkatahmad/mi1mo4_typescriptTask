@@ -31,3 +31,43 @@ const checkType = (input: StringOrNumber) => {
 
 checkType(42);
 // console.log(checkType(42));
+
+// return the value of a key of that object
+type User = {
+  id: number;
+  name: string;
+  age: number;
+};
+
+const getProperty = <T extends User, K extends keyof T>(user: T, key: K) => {
+  return user[key];
+};
+
+const user = { id: 1, name: "John Doe", age: 21 };
+getProperty(user, "name");
+// console.log(getProperty(user, "name"));
+
+// add a default value to a key of an object and toggle in every function call
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+}
+
+type BookWithRead = Book & { isRead?: boolean };
+
+const toggleReadStatus = (inputBook: BookWithRead, isRead: boolean = true) => {
+  return {
+    ...inputBook,
+    isRead: inputBook.isRead !== undefined ? !inputBook.isRead : true,
+  };
+};
+
+const myBook = {
+  title: "TypeScript Guide",
+  author: "Jane Doe",
+  publishedYear: 2024,
+  isRead: true,
+};
+toggleReadStatus(myBook);
+// console.log(toggleReadStatus(myBook));

@@ -6,4 +6,4 @@
 
 `Abstraction` let's us **reduce complexity**. It also **enforse structure** within the sub-classes by ensuring **type safty** and leave the complex logic to be implemented in the sub-classes.
 
-`Encapsulation` lets us to **control access** ensuring private data to be modified in the intended method and ensuring **type safty** by not letting external scource setting invalid values. Which **reduce complexity** in large-scale projects.
+`Encapsulation` lets us to **control access** ensuring private data to be modified in the desired method and ensuring **type safty** by not letting external scource setting invalid values. Which **reduce complexity** in large-scale projects.

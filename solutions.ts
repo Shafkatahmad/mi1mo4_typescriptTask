@@ -1,7 +1,6 @@
 // Filtering even numbers
 const filterEvenNumbers = (numOfArr: number[]) => {
   const evenNumArray: number[] = numOfArr.filter((number) => number % 2 === 0);
-  // console.log(evenNumArray);
   return evenNumArray;
 };
 
@@ -14,7 +13,6 @@ const reverseString = (input: string) => {
   for (let i = input.length - 1; i >= 0; i--) {
     newString = newString + input[i];
   }
-  // console.log(newString);
 
   return newString;
 };
@@ -30,7 +28,6 @@ const checkType = (input: StringOrNumber) => {
 };
 
 checkType(42);
-// console.log(checkType(42));
 
 // return the value of a key of that object
 type User = {
@@ -45,7 +42,6 @@ const getProperty = <T extends User, K extends keyof T>(user: T, key: K) => {
 
 const user = { id: 1, name: "John Doe", age: 21 };
 getProperty(user, "name");
-// console.log(getProperty(user, "name"));
 
 // add a default value to a key of an object and toggle in every function call
 interface Book {
@@ -59,7 +55,7 @@ type BookWithRead = Book & { isRead?: boolean };
 const toggleReadStatus = (inputBook: BookWithRead, isRead: boolean = true) => {
   return {
     ...inputBook,
-    isRead: inputBook.isRead !== undefined ? !inputBook.isRead : true,
+    isRead: inputBook.isRead !== undefined ? !inputBook.isRead : isRead,
   };
 };
 
@@ -70,7 +66,6 @@ const myBook = {
   isRead: true,
 };
 toggleReadStatus(myBook);
-// console.log(toggleReadStatus(myBook));
 
 // Class
 class Person {
@@ -98,7 +93,6 @@ class Student extends Person {
 
 const student = new Student("Alice", 20, "A");
 student.getDetails();
-// console.log(student.getDetails());
 
 // return intersection function
 const getIntersection = (firstArray: number[], secondArray: number[]) => {
@@ -118,4 +112,4 @@ const getIntersection = (firstArray: number[], secondArray: number[]) => {
   return intersectionArray;
 };
 
-console.log(getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
+getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
